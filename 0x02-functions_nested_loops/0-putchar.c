@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char *holberton = "_putcher";
+	char *holberton = "_putchar";
 
 	while (*holberton)
 	{
