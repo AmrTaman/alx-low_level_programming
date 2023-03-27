@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-        char amr[] = "error section is here";
-
+        char amr[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+        
         fputs(amr, stderr);
         return (1);
 }
