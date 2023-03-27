@@ -1,11 +1,13 @@
-#include <stdio.h>
-/**
-   * main - prints to the standard error
-   *
-   * Return: one
-   */
+#include<stdio.h>
+/*
+ * main - testing the error streaming message
+ *
+ * Return: one
+ */
 int main(void)
 {
-  fprintf(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-  return (1);
+        char amr[] = "error section is here";
+
+        fputs(amr, stderr);
+        return (1);
 }
