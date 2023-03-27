@@ -1,13 +1,12 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
-   * main - print to screen
-   *
-   * Return: zero
-   */
+ * main - fputs
+ *
+ * Return: one
+ */
 int main(void)
 {
-	char Mystr[] = "\"Programming is like building a multilingual puzzle";
-
-	puts(Mystr);
-	return (0);
+        char amr[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+        fputs(amr, stderr);
+        return (1);
 }
