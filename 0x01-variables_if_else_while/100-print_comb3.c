@@ -6,13 +6,10 @@
  */
 int main(void)
 {
-	char u = '0';
-	char t;
-
-	while (u <= '9')
+	while (char u <= '9')
 	{
 		t = u+1;
-		while (t <= '9')
+		while (char t <= '9')
 		{
 			putchar(u);
 			putchar(t);
@@ -22,4 +19,5 @@ int main(void)
 		}
 		u++;
 	}
+	return (0);
 }
