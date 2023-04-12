@@ -1,23 +1,27 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
- * main - printing all possible prints of 2 digits
+ * main - alphabet
  *
  * Return: zero
  */
 int main(void)
 {
-	while (char u <= '9')
+	int first;
+	int second;
+
+	for (first = '0'; first <= '9'; first++)
 	{
-		t = u+1;
-		while (char t <= '9')
+		for (second = '0'; second <= '9'; second++)
 		{
-			putchar(u);
-			putchar(t);
-			putchar(',');
-			putchar(' ');
-			t++;
+			if (first != second && first < second)
+			{
+				putchar(first);
+				putchar(second);
+				if (first == '8' && second == '9')
+					break;
+				putchar(',');
+				putchar(' ');
+			}
 		}
-		u++;
 	}
-	return (0);
 }
