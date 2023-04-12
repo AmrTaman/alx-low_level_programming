@@ -18,7 +18,10 @@ int main(void)
 				putchar(first);
 				putchar(second);
 				if (first == '8' && second == '9')
+				{
+					putchar(' ');
 					break;
+				}
 				putchar(',');
 				putchar(' ');
 			}
