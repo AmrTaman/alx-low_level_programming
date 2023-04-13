@@ -4,7 +4,7 @@
  *
  * Return: Zero
  */
-void calc( int a,int b,int c,int d){
+int calc( int a,int b,int c,int d){
 
                 putchar(a);
                 putchar(b);
