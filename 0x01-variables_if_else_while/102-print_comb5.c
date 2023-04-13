@@ -1,12 +1,12 @@
 #include<stdio.h>
 /**
- * calc - printing
+ * calc - printing a values
  * @a: is 1
  * @b: is 1
  * @c: is 1
  * @d: is 1
  *
- * Return: zero
+ * Return: Zero
  */
 int calc(int a, int b, int c, int d)
 {
