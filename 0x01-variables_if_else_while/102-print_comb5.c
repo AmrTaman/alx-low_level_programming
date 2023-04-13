@@ -37,11 +37,11 @@ int main(void)
 				{
 					if (a != c || b != d)
 					{
-						if (a == c && b < d)
+					if (a == c && b < d)
 						{
 							calc(a, b, c, d);
 						}
-						else if (a < c)
+					else if (a < c)
 						{
 							calc(a, b, c, d);
 						}
