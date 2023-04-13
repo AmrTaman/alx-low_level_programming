@@ -4,6 +4,7 @@
  *
  * Return: Zero
  */
+
 /**
  * calc - printing
  * @a: is 1
