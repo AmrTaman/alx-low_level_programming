@@ -4,6 +4,15 @@
  *
  * Return: Zero
  */
+/**
+ * calc - printing
+ * member 'a': is 1
+ * member 'b': is 1
+ * member 'c': is 1
+ * member 'd': is 1
+ * 
+ * Return: zero
+ */
 int calc(int a, int b, int c, int d)
 {
 		putchar(a);
