@@ -6,11 +6,11 @@
  */
 /**
  * calc - printing
- * member 'a': is 1
- * member 'b': is 1
- * member 'c': is 1
- * member 'd': is 1
- * 
+ * @a: is 1
+ * @b: is 1
+ * @c: is 1
+ * @d: is 1
+ *
  * Return: zero
  */
 int calc(int a, int b, int c, int d)
