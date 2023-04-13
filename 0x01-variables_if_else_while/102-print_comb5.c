@@ -14,9 +14,9 @@ void calc( int a,int b,int c,int d){
                         if (a == '9' && b == '8' && c == '9' && d == '9')
                 {
                         putchar('\n');
-                        break;
+                        return (0);
                 }
-                if (a != '9' && b != '8' && c != '9' && d != '9')
+                
                 putchar(',');
                 putchar(' ');
 
