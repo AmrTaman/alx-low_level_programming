@@ -19,6 +19,7 @@ int calc( int a,int b,int c,int d){
                 
                 putchar(',');
                 putchar(' ');
+                return (0);
 
 }
 int main(void)
