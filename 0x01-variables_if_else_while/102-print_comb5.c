@@ -28,7 +28,7 @@ int main(void)
 	int d;
 
 	for (a = '0'; a <= '9' ; a++)
-	{             
+	{
 		for (b = '0'; b <= '9'; b++)
 		{
 			for (c = '0'; c <= '9'; c++)
@@ -37,11 +37,11 @@ int main(void)
 				{
 					if (a != c || b != d)
 					{
-						if ( a == c && b < d )
+						if (a == c && b < d)
 						{
 							calc(a, b, c, d);
 						}
-						else if (a < c )
+						else if (a < c)
 						{
 							calc(a, b, c, d);
 						}
