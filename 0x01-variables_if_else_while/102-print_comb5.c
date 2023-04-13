@@ -16,6 +16,7 @@ void calc( int a,int b,int c,int d){
                         putchar('\n');
                         break;
                 }
+                if (a != '9' && b != '8' && c != '9' && d != '9')
                 putchar(',');
                 putchar(' ');
 
@@ -54,6 +55,6 @@ int main(void)
                 
 
                 
-                }}}}
+                }}}}}
         return (0);
 }
