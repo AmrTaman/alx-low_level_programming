@@ -10,7 +10,7 @@ int main(void)
         int b ;
         int c ;
         int d ;
-        int n = 0;
+  
 
 
             for (a = '0'; a <= '9' ; a++){
@@ -38,4 +38,5 @@ int main(void)
 
                 
         }}}}
+        return (0);
 }
