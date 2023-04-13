@@ -21,7 +21,7 @@ int main(void)
                   for (d = '0'; d <= '9'; d++){
              
                 if( a != c || b != d){
-                    if ( a + b  < c+d){
+                    if ( a <= c  ){
                 putchar(a);
                 putchar(b);
                 putchar(' ');
