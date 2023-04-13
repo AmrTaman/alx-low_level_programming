@@ -1,11 +1,5 @@
 #include<stdio.h>
 /**
- * main - habaal
- *
- * Return: Zero
- */
-
-/**
  * calc - printing
  * @a: is 1
  * @b: is 1
@@ -30,6 +24,11 @@ int calc(int a, int b, int c, int d)
 		putchar(' ');
 		return (0);
 }
+/**
+ * main - habaal
+ *
+ * Return: Zero
+ */
 int main(void)
 {
 int a;
