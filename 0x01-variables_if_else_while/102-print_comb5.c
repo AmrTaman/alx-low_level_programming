@@ -4,6 +4,22 @@
  *
  * Return: Zero
  */
+void calc( int a,b,c,d){
+
+                putchar(a);
+                putchar(b);
+                putchar(' ');
+                putchar(c);
+                putchar(d);   
+                        if (a == '9' && b == '8' && c == '9' && d == '9')
+                {
+                        putchar('\n');
+                        break;
+                }
+                putchar(',');
+                putchar(' ');
+
+}
 int main(void)
 {
         int a ;
@@ -21,39 +37,23 @@ int main(void)
                   for (d = '0'; d <= '9'; d++){
              
                 if( a != c || b != d){
-                    if ( a == c && b < d ){
-                putchar(a);
-                putchar(b);
-                putchar(' ');
-                putchar(c);
-                putchar(d);
-                if (a == '9' && b == '8' && c == '9' && d == '9')
-                {
-                        putchar('\n');
-                        break;
-                }
-                putchar(',');
-                putchar(' ');}
+                    if ( a == c && b < d ){ 
+                    calc(a,b,c,d);
+                    
+                    }
+
+
                 
                 else if (a < c ){
-                                        putchar(a);
-                putchar(b);
-                putchar(' ');
-                putchar(c);
-                putchar(d);
-                if (a == '9' && b == '8' && c == '9' && d == '9')
-                {
-                        putchar('\n');
-                        break;
-                }
-                putchar(',');
-                putchar(' ');
+                     calc(a,b,c,d);       
+
+
                 }
                 
-                }
+                
                 
 
                 
-        }}}}
+                }}}}
         return (0);
 }
