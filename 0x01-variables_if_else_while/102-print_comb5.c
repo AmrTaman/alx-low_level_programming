@@ -22,33 +22,33 @@ int calc(int a, int b, int c, int d)
 }
 int main(void)
 {
-	int a;
-	int b;
-	int c;
-	int d;
+int a;
+int b;
+int c;
+int d;
 
-	for (a = '0'; a <= '9' ; a++)
+for (a = '0'; a <= '9' ; a++)
+{
+	for (b = '0'; b <= '9'; b++)
 	{
-		for (b = '0'; b <= '9'; b++)
+		for (c = '0'; c <= '9'; c++)
 		{
-			for (c = '0'; c <= '9'; c++)
+			for (d = '0'; d <= '9'; d++)
 			{
-				for (d = '0'; d <= '9'; d++)
+				if (a != c || b != d)
 				{
-					if (a != c || b != d)
-					{
 					if (a == c && b < d)
-						{
-							calc(a, b, c, d);
-						}
+					{
+						calc(a, b, c, d);
+					}
 					else if (a < c)
-						{
-							calc(a, b, c, d);
-						}
+					{
+						calc(a, b, c, d);
 					}
 				}
 			}
 		}
 	}
-	return (0);
+}
+return (0);
 }
