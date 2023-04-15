@@ -1,7 +1,7 @@
 #include"main.h"
 /**
  * print_times_table - printing times table till 15
- * @n - describes the end of tables
+ * @n: describes the end of tables
  */
 void print_times_table(int n)
 {
@@ -20,19 +20,19 @@ void print_times_table(int n)
 				_putchar(',');
 				_putchar(' ');
 				if (times / 100 >= 1)
+				{
 					_putchar('0' + times / 100);
-				else
-				{
-					_putchar(' ');
-				}
-				if (times / 10 >= 1 && times < 100)
-					_putchar('0' + times / 10);
-				else if (times / 10 % 10 >= 0)
 					_putchar('0' + times / 10 % 10);
+				}
 				else
 				{
 					_putchar(' ');
-				}
+					if (times / 10 >= 1 && times < 100)
+						_putchar('0' + times / 10);	
+					else
+					{
+						_putchar(' ');
+					}
 				_putchar('0' + times % 10);
 			}
 			_putchar('\n');
