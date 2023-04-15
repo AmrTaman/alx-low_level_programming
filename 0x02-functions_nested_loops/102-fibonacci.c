@@ -15,7 +15,7 @@ int main(void)
 		sum += x;
 		x += sum;
 		printf("%lu, ", sum);
-		if ( m == 24)
+		if (m == 24)
 			printf("%lu\n", x);
 		else
 		{
