@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	long int i = 1231952;
+	long int i = 612852475143;
  	long int largest = 0;
 	long int n;
 
