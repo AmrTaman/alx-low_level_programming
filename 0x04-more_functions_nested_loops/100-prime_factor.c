@@ -8,8 +8,9 @@ int main(void)
 {
 	long int i = 1231952;
  	long int largest = 0;
+	long int n;
 
-	for(long int n = 2; n <= i ; n++){
+	for(n = 2; n <= i ; n++){
 		if (i % n  == 0 )
 		{
 			i=i/n;
