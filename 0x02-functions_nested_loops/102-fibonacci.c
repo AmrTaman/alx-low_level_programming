@@ -15,7 +15,6 @@ int main(void)
 		sum += x;
 		x += sum;
 		printf("%lu, ", sum);
-		printf("%lu, ", x);
 	}
 	return (0);
 }
