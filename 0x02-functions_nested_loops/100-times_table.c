@@ -1,6 +1,7 @@
 #include"main.h"
 /**
  * print_times_table - printing times table till 15
+ * @n - describes the end of tables
  */
 void print_times_table(int n)
 {
