@@ -14,7 +14,8 @@ int main(void)
 	{
 		sum += x;
 		x += sum;
+		printf("%lu, ", sum);
+		printf("%lu, ", x);
 	}
-	printf("%lu\n", x);
 	return (0);
 }
