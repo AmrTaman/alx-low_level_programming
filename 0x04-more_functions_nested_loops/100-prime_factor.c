@@ -10,7 +10,8 @@ int main(void)
  	long int largest = 0;
 	long int n;
 
-	for(n = 2; n <= i ; n++){
+	for(n = 2; n <= i ; n++)
+	{
 		if (i % n  == 0 )
 		{
 			i = i / n;
