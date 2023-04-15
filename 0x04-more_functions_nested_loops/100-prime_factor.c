@@ -19,6 +19,6 @@ int main(void)
 			n = 1;
 		}
 	}
-	printf("%lu \n" , largest);
+	printf("%lu\n" , largest);
 	return (0);
 }
