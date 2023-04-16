@@ -6,8 +6,9 @@
  */
 int main(void)
 {
-	unsigned long int sum = 0;
-	unsigned long int x = 1;
+	long sum = 0;
+	long x = 1;
+	long frsths, scndhs, frsthx, scndhx;
 	int m;
 
 	for (m = 0; m < 49; m++)
