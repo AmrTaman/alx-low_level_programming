@@ -10,12 +10,12 @@ int main(void)
 	long x = 1;
 	int m;
 
-	for (m = 0; m < 50; m++)
+	for (m = 0; m < 49; m++)
 	{
 		sum += x;
 		x += sum;
 		printf("%lu, ", sum);
-		if (m == 24)
+		if (m == 49)
 			printf("%lu\n", x);
 		else
 		{
