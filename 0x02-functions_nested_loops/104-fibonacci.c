@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	long sum = 0;
-	long x = 1;
+	long int sum = 0;
+	long int x = 1;
 	int m;
 
 	for (m = 0; m < 49; m++)
