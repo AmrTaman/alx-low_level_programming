@@ -10,7 +10,7 @@ int main(void)
 	long x = 1;
 	int m;
 
-	for (m = 0; m < 49; m++)
+	for (m = 0; m < 50; m++)
 	{
 		sum += x;
 		x += sum;
