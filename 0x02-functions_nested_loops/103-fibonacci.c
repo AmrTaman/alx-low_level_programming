@@ -13,10 +13,7 @@ int main(void)
 	while (1)
 	{
 		sum += x;
-		x += sum;
-		if (sum >= 4000000 || x >= 4000000)
-			break;
-		else
+		if (sum <= 4000000 || x <= 4000000)
 		{
 			if (sum % 2 == 0)
 			{
@@ -28,7 +25,11 @@ int main(void)
 				m += x;
 				printf("%lu", m);
 			}
+		else
+		{
+			break;
 		}
+		x += sum;
 	}
 	return (0);
 }
