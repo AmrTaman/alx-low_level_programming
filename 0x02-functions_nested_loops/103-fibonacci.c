@@ -10,7 +10,7 @@ int main(void)
 	long x = 1;
 	long m = 0;
 
-	while (True)
+	while (1)
 	{
 		sum += x;
 		x += sum;
