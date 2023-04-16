@@ -25,6 +25,7 @@ int main(void)
 				m += x;
 				printf("%lu", m);
 			}
+		}
 		else
 		{
 			break;
