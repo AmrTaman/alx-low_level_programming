@@ -18,12 +18,10 @@ int main(void)
 			if (sum % 2 == 0)
 			{
 				m += sum;
-				printf("%lu", m);
 			}
 			else if (x % 2 == 0)
 			{
 				m += x;
-				printf("%lu", m);
 			}
 		}
 		else
@@ -32,5 +30,6 @@ int main(void)
 		}
 		x += sum;
 	}
+	printf("%lu\n", m);
 	return (0);
 }
