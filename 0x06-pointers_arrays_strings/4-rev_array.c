@@ -3,8 +3,6 @@
  * reverse_array - a function that takes a pointer to an int as parameter and
  * @a: the tab integer
  * @n: the number
- *
- * Return: 1 or 0
  */
 void reverse_array(int *a, int n)
 {
