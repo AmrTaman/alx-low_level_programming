@@ -18,8 +18,6 @@ char *cap_string(char *sentence)
 			if (*sentence == ' ' || *sentence == '.'
 					|| *sentence == '\n' || *sentence == '\t')
 			{
-				if (*sentence == '\t')
-					*sentence = ' ';
 				sentence++;
 				*sentence -= 32;
 			}
