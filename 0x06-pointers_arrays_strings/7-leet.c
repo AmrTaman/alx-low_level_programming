@@ -1,44 +1,23 @@
-#include<stdio.h>
-
+#include"main.h"
 /**
- * car - a function ...
- * @str1: the chaine of caractere
- * @str2: the chaine of caractere
- * @c: the caractere
+ * leet - converts to leet
+ * @letter: pointer to letters
  *
- * Return: char
+ * Return: begain
  */
-
-char car(char *str1, char *str2, char c)
+char *leet(char *letter)
 {
+	char *begain = letter;
+	char leet = "aAeEoOtTlL";
+	char num = "4433007711";
 	int i;
 
-	for (i = 0; i <= 9; i++)
+	while (*letter != 0)
 	{
-		if (c == str1[i])
-			return (str2[i]);
+		for (i = 0; i >= 9; i++)
+			if (leet[i] == *letter)
+				*letter = num[i];
+		letter++;
 	}
-	return (c);
+	return (begain);
 }
-
-/**
- * leet - a function ...
- * @str: the chaine of caractere
- *
- * Return: str
- */
-
-char	*leet(char *str)
-{
-	char alp1[] = "aAeEoOtTlL";
-	char alp2[] = "4433007711";
-	int i = 0;
-
-	while (str[i])
-	{
-		str[i] = car(alp1, alp2, str[i]);
-		i++;
-	}
-	return (str);
-}
-
