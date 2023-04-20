@@ -1,4 +1,5 @@
 #include"main.h"
+#include<stdio.h>
 /**
  * leet - converts to leet
  * @letter: pointer to letters
@@ -8,14 +9,14 @@
 char *leet(char *letter)
 {
 	char *begain = letter;
-	char leet = "aAeEoOtTlL";
-	char num = "4433007711";
+	char leet[] = "aAeEoOtTlL";
+	char num[] = "4433007711";
 	int i;
 
 	while (*letter != 0)
 	{
-		for (i = 0; i >= 9; i++)
-			if (leet[i] == *letter)
+		for (i = 0; i <= 9; i++)
+			if (*letter == leet[i])
 				*letter = num[i];
 		letter++;
 	}

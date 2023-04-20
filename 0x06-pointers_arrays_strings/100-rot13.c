@@ -1,47 +1,28 @@
-#include<stdio.h>
-
+#include"main.h"
 /**
- * remplace13 - a function ...
- * @b: char
+ * rot13 - convert to rot
+ * @letter: index
  *
- * Return: char
+ * Return: begain
  */
-
-char remplace13(char b)
+char *rot13(char *letter)
 {
-	/*ASCII 65 is A and 90 is Z*/
-	if ((b > 64) && (b < 91))
+	char *begain = letter;
+	char rot[] = "ABCDEFGHIJKLMabcdefghijklm";
+	char rot2[] = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	int i;
+
+	while (*letter != 0)
 	{
-		b = ((b - 65 + 13) % 26) + 65;
+		for (i = 0; i <= 25; i++)
+		{
+			if (rot[i] == *letter)
+				*letter = rot2[i];
+			else if (*letter == rot2[i])
+				*letter = rot[i];
+		}
+		letter++;
 	}
-
-	/*ASCII 97 is a and 122 is z*/
-	if ((b > 96) && (b < 123))
-	{
-		b = ((b - 97 + 13) % 26) + 97;
-	}
-
-	return (b);
-}
-
-/**
- * rot13 - a function ...
- * @str: the chaine of caractere
- *
- * Return: str
- */
-
-char	*rot13(char *str)
-{
-	int i = 0;
-	/*char alp[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";*/
-	/*char cde[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";*/
-
-	while (str[i])
-	{
-		str[i] = remplace13(str[i]);
-		i++;
-	}
-	return (str);
+	return (begain);
 }
 
