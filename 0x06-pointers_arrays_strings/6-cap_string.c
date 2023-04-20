@@ -16,7 +16,12 @@ char *cap_string(char *sentence)
 		{
 			sentence--;
 			if (*sentence == ' ' || *sentence == '.'
-					|| *sentence == '\n' || *sentence == '\t')
+					|| *sentence == '\n' || *sentence == '\t'
+					|| *sentence == ',' || *sentence == ';' ||
+					*sentence == '!' || *sentence == '?'
+					|| *sentence == '\"' || *sentence == '('
+					|| *sentence == ')' || *sentence == '{'
+					|| *sentence == '}')
 			{
 				sentence++;
 				*sentence -= 32;
