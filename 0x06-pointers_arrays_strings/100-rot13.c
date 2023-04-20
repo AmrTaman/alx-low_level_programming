@@ -8,16 +8,18 @@
 char *rot13(char *letter)
 {
 	char *begain = letter;
-	char rot[] = "ABCDEFGHIJKLMabcdefghijklm";
-	char rot2[] = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	char rot[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
 	int i;
 
 	while (*letter != 0)
 	{
-		for (i = 0; i <= 25; i++)
+		for (i = 0; i <= 51; i++)
 		{
-			if (rot[i] == *letter)
-				*letter = rot2[i];
+			if (*letter == rot[i])
+			{
+				*letter = rot[i+25];
+			}
+			
 		}
 		letter++;
 	}
