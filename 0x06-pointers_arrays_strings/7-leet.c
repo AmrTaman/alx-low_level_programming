@@ -14,7 +14,7 @@ char *leet(char *letter)
 
 	while (*letter != 0)
 	{
-		for (i = 0; i >= 9; i++)
+		for (i = 0; i <= 9; i++)
 			if (leet[i] == *letter)
 				*letter = num[i];
 		letter++;
