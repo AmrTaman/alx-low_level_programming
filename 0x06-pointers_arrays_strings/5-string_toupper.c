@@ -1,40 +1,21 @@
-#include<stdio.h>
-
+#include"main.h"
 /**
- * upper - a function ...
- * @c: the caractere
+ * string_toupper - turn lowercase to upercase
+ * @amr: pointer for a char array
  *
- * Return: 1 or 0.
+ * Return: sui
  */
-
-char	upper(char c)
+char *string_toupper(char *amr)
 {
-	char	car;
+	char *sui = amr;
 
-	if (c >= 'a' && c <= 'z')
-		car = c + 'A' - 'a';
-	else
-		car = c;
-	return (car);
-}
-
-/**
- * string_toupper - a function ...
- * @str: the chaine of caractere
- *
- * Return: str
- */
-
-char	*string_toupper(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*amr != 0)
 	{
-		str[i] = upper(str[i]);
-		i++;
+		if (*amr >= 'a' && *amr <= 'z')
+		{
+			*amr = *amr - 32;
+		}
+		amr++
 	}
-	return (str);
+	return (sui);
 }
-
