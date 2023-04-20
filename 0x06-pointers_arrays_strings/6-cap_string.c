@@ -9,6 +9,7 @@ char *cap_string(char *sentence)
 {
 	char *begain = sentence;
 
+	*sentence -= 32;
 	sentence++;
 	while (*sentence != 0)
 	{
