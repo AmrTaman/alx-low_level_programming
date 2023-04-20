@@ -17,7 +17,7 @@ char *rot13(char *letter)
 		{
 			if (*letter == rot[i])
 			{
-				*letter = rot[i + 26];
+				*letter = rot[i - 26];
 			}
 		}
 		letter++;
