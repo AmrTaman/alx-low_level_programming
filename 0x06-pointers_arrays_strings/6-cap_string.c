@@ -11,7 +11,7 @@ char *cap_string(char *sentence)
 
 	while (*sentence != 0)
 	{
-		if (begain == sentence)
+		if (*begain >= 'a' && *begain <= 'z')
 			*sentence -= 32;
 		if (*sentence >= 'a' && *sentence <= 'z')
 		{
