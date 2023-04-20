@@ -18,8 +18,6 @@ char *rot13(char *letter)
 		{
 			if (rot[i] == *letter)
 				*letter = rot2[i];
-			else if (*letter == rot2[i])
-				*letter = rot[i];
 		}
 		letter++;
 	}
