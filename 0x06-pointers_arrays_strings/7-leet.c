@@ -8,8 +8,8 @@
 char *leet(char *letter)
 {
 	char *begain = letter;
-	char leet = "aAeEoOtTlL";
-	char num = "4433007711";
+	char leet[] = "aAeEoOtTlL";
+	char num[] = "4433007711";
 	int i;
 
 	while (*letter != 0)
