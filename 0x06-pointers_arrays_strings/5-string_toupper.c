@@ -15,7 +15,7 @@ char *string_toupper(char *amr)
 		{
 			*amr = *amr - 32;
 		}
-		amr++
+		amr++;
 	}
 	return (sui);
 }
