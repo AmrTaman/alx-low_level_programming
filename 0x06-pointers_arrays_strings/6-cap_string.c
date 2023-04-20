@@ -1,40 +1,29 @@
-#include<stdio.h>
-
+#include"main.h"
 /**
- * upper - a function ...
- * @c: the caractere
+ * cap_string - capitalizes the begaining of all words
+ * @sentence: pointer for elments of the string
  *
- * Return: 1 or 0.
+ * Return: begain
  */
-
-char	upper(char c)
+char *cap_string(char *sentence)
 {
-	char	car;
+	char *begain = sentence;
 
-	if (c >= 'a' && c <= 'z')
-		car = c + 'A' - 'a';
-	else
-		car = c;
-	return (car);
-}
-
-/**
- * cap_string - a function ...
- * @str: the chaine of caractere
- *
- * Return: str
- */
-
-char	*cap_string(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
+	sentence++;
+	while (*sentence != 0)
 	{
-		str[i] = upper(str[i]);
-		i++;
+		if (*sentence >= 'a' && *sentence <= 'z')
+		{
+			sentence--;
+			if (*sentence == ' ' || *sentence == '.'
+					|| *sentence == '\n' || *sentence == '\t')
+			{
+				sentence++;
+				*sentence -= 32;
+			}
+			sentence++;
+		}
+		sentence++;
 	}
-	return (str);
+	return (begain);
 }
-
