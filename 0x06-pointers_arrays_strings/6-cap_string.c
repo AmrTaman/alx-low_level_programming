@@ -9,8 +9,6 @@ char *cap_string(char *sentence)
 {
 	char *begain = sentence;
 
-	*sentence -= 32;
-	sentence++;
 	while (*sentence != 0)
 	{
 		if (*sentence >= 'a' && *sentence <= 'z')
@@ -22,7 +20,7 @@ char *cap_string(char *sentence)
 					*sentence == '!' || *sentence == '?'
 					|| *sentence == '\"' || *sentence == '('
 					|| *sentence == ')' || *sentence == '{'
-					|| *sentence == '}')
+					|| *sentence == '}' || begain == sentence)
 			{
 				sentence++;
 				*sentence -= 32;
