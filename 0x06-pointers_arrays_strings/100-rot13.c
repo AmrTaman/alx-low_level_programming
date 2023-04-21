@@ -1,4 +1,5 @@
 #include"main.h"
+#include<stdio.h>
 /**
  * rot13 - convert to rot
  * @letter: index
@@ -9,6 +10,7 @@ char *rot13(char *letter)
 {
 	char *begain = letter;
 	char rot[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
+	char sol[] = "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm";
 	int i;
 
 	while (*letter != 0)
@@ -17,11 +19,11 @@ char *rot13(char *letter)
 		{
 			if (*letter == rot[i])
 			{
-				*letter = rot[i - 26];
+				*letter = sol[i];
+				break;
 			}
 		}
 		letter++;
 	}
 	return (begain);
 }
-
