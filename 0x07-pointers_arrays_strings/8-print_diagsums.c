@@ -11,22 +11,27 @@ void print_diagsums(int *a, int size)
 	int *b = a;
 	long sum = 0;
 
-	for (x = 0; x < 1; x++)
+	for (x = 0; x <= 1; x++)
 	{
-		for (y = 0; y < (size - 1); y++)
+		for (y = 0; y <= (size - 1); y++)
 		{
-			a = a + (size + 1);
-			sum = sum + *a;
+			if (x == 0)
+			{
+				sum = sum + *a;
+				a = a + (size + 1);
+			}
+			else
+			{
+				sum = sum + *a;
+				a = a + (size - 1);
+			}
 		}
-		printf("%lu, ", sum);
-		sum = 0;
-		a = b;
-		for (y = 0; y < (size - 1); y++)
+		if (x == 0)
+			printf("%lu, ", sum);
+		else
 		{
-			a = a + (size - 1);
-			sum = sum + *a;
+			printf("%lu\n", sum);
 		}
-		printf("%lu\n", sum);
 		sum = 0;
 		a = b;
 	}
