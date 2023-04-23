@@ -9,7 +9,7 @@ void print_diagsums(int *a, int size)
 {
 	int x, y;
 	int *b = a;
-	long signed sum = 0;
+	signed long sum = 0;
 
 	for (x = 0; x <= 1; x++)
 	{
