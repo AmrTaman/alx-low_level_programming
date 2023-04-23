@@ -9,7 +9,7 @@ void print_diagsums(int *a, int size)
 {
 	int x, y;
 	int *b = a;
-	long sum = 0;
+	long signed sum = 0;
 
 	for (x = 0; x <= 1; x++)
 	{
@@ -27,10 +27,10 @@ void print_diagsums(int *a, int size)
 			}
 		}
 		if (x == 0)
-			printf("%lu, ", sum);
+			printf("%ld, ", sum);
 		else
 		{
-			printf("%lu\n", sum);
+			printf("%ld\n", sum);
 		}
 		sum = 0;
 		a = b;
