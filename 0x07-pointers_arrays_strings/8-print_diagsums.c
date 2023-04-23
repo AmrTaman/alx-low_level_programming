@@ -9,7 +9,7 @@ void print_diagsums(int *a, int size)
 {
 	int x, y;
 	int *b = a;
-	int sum = 0;
+	long sum = 0;
 
 	for (x = 0; x < 1; x++)
 	{
@@ -18,7 +18,7 @@ void print_diagsums(int *a, int size)
 			a = a + (size + 1);
 			sum = sum + *a;
 		}
-		printf("%d, ", sum);
+		printf("%lu, ", sum);
 		sum = 0;
 		a = b;
 		for (y = 0; y <= (size - 1); y++)
@@ -26,7 +26,7 @@ void print_diagsums(int *a, int size)
 			a = a + (size - 1);
 			sum = sum + *a;
 		}
-		printf("%d\n", sum);
+		printf("%lu\n", sum);
 		sum = 0;
 		a = b;
 	}
