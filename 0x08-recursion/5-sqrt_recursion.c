@@ -4,7 +4,7 @@
  * @i: testing integer
  * @n: powerd integer
  *
- * Return i;
+ * Return: integer
  */
 int sqr(int i, int n)
 {
@@ -25,4 +25,4 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 	return (sqr(0, n));
-}	
+}
