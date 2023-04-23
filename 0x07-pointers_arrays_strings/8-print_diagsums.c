@@ -1,37 +1,34 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 8-print_diagsums.c                           /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include <stdio.h>
-
+#include"main.h"
+#include<stdio.h>
 /**
- * print_diagsums - a function ...
- * @a: the matrix
- * @size: the length of matrice
- *
- * Return: 1 or 0
+ * print_diagsums - prints sum of diagonals
+ * @a: two dimensional array
+ * @size: size*sze array
  */
-
-
 void print_diagsums(int *a, int size)
 {
-	int	i =0, *ptr, j = 0;
-	
-	for (i = 0; i < size; i++)
+	int x, y;
+	int *b = a;
+	int sum = 0;
+
+	for (x = 0; x < 1; x++)
 	{
-		ptr = a;
-		for (j = 0 ; j < size; j++)
-			printf("%d ",ptr[j]);
-		ptr++;
-		printf("\n");
+			for (y = 0; y < (size - 1); y++)
+			{
+				a = a + (size + 1);
+				sum = sum + *a;
+			}
+			printf("%d, ", sum);
+			sum = 0;
+			a = b;
+			for (y = 0; y < (size - 1); y++)
+			{
+				a = a + (size - 1);
+				sum = sum + *a;
+			}
+			printf("%d\n", sum);
+			sum = 0;
+			a = b;
+		
 	}
 }
-
