@@ -13,7 +13,7 @@ void print_diagsums(int *a, int size)
 
 	for (x = 0; x < 1; x++)
 	{
-		for (y = 0; y <= (size - 1); y++)
+		for (y = 0; y < (size - 1); y++)
 		{
 			a = a + (size + 1);
 			sum = sum + *a;
@@ -21,7 +21,7 @@ void print_diagsums(int *a, int size)
 		printf("%lu, ", sum);
 		sum = 0;
 		a = b;
-		for (y = 0; y <= (size - 1); y++)
+		for (y = 0; y < (size - 1); y++)
 		{
 			a = a + (size - 1);
 			sum = sum + *a;
