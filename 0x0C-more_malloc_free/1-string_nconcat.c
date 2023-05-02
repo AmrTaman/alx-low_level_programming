@@ -1,57 +1,37 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 1-string_nconcat                             /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include <stdlib.h>
-#include "main.h"
-
+#include"main.h"
+#include<stdlib.h>
 /**
- * *string_nconcat - concatenates n bytes of a string to another string
- * @s1: string to append to
- * @s2: string to concatenate from
- * @n: number of bytes from s2 to concatenate to s1
+ * string_nconcat - concatonates two strings
+ * @s1: frst string
+ * @s2: scnd string
+ * @n: concatonated values number
  *
- * Return: pointer to the resulting string
+ * Return: ptr
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
+	unsigned int f = 0, s = 0;
+	char *ptr;
 
-	while (s1 && s1[len1])
-		len1++;
-	while (s2 && s2[len2])
-		len2++;
-
-	if (n < len2)
-		s = malloc(sizeof(char) * (len1 + n + 1));
-	else
-		s = malloc(sizeof(char) * (len1 + len2 + 1));
-
-	if (!s)
-		return (NULL);
-
-	while (i < len1)
+	while (s1[f])
 	{
-		s[i] = s1[i];
-		i++;
+		f++;
 	}
-
-	while (n < len2 && i < (len1 + n))
-		s[i++] = s2[j++];
-
-	while (n >= len2 && i < (len1 + len2))
-		s[i++] = s2[j++];
-
-	s[i] = '\0';
-
-	return (s);
+	while (s2[s])
+	{
+		s++;
+	}
+	ptr = malloc(sizeof(char) * (f + n + 1));
+	if (ptr == 0)
+		return (NULL);
+	if (n > s)
+		n = s;
+	for (s = 0; s < f + n; s++)
+	{
+		if (s < f)
+			ptr[s] = s1[s];
+		else if (s >= f)
+			ptr[s] = s2[s - f];
+	}
+	return (ptr);
 }
