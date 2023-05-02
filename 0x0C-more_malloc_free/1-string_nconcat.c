@@ -21,12 +21,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s++;
 	}
-	ptr = malloc(sizeof(char) * (f + n));
+	ptr = malloc(sizeof(char) * (f + n + 1));
 	if (ptr == 0)
 		return (NULL);
 	if (n > s)
 		n = s;
-	for (s = 0; s < f + n - 1; s++)
+	for (s = 0; s < f + n; s++)
 	{
 		if (s < f)
 			ptr[s] = s1[s];
