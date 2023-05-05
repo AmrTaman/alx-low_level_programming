@@ -1,4 +1,5 @@
 #include"main.h"
+#include<stdio.h>
 /**
  * power - perform the operation
  * @b: pointer
@@ -23,12 +24,12 @@ unsigned int binary_to_uint(const char *b)
 {
 	int m = 1, i = 1;
 
-	if (b == 0)
+	if (b == NULL)
 		return (0);
 	while (b[m])
 	{
 		i *= 2;
-		if (!(b[m] <= '9' && b[m] >= '0'))
+		if (b[m] != '1' && b[m] != '0')
 			return (0);
 		m++;
 	}
