@@ -1,30 +1,26 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-
 
 /**
- * print_binary - a function ....
- * @n: the chaine of caractere
- *
- * Return: 1 or 0
+ * print_binary - prints the binary equivalent of a decimal number
+ * @n: number to print in binary
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = ~(~0U >> 1);
-	unsigned long int i = 0;
+	int i, count = 0;
+	unsigned long int current;
 
-	while (mask > 0)
+	for (i = 63; i >= 0; i--)
 	{
-		/**
-		 *if (i != 0 && i % 4 == 0)
-		 *	putchar(' ');
-		 */
+		current = n >> i;
 
-		putchar((n & mask) ? '1' : '0');
-		mask >>= 1;
-		++i;
+		if (current & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+			_putchar('0');
 	}
-
-	putchar('\n');
+	if (!count)
+		_putchar('0');
 }
