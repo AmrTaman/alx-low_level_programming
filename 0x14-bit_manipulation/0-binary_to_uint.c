@@ -1,5 +1,4 @@
 #include"main.h"
-#include<stdio.h>
 /**
  * power - perform the operation
  * @b: pointer
