@@ -1,39 +1,21 @@
-#include"main.h"
-#include<stdio.h>
+#include "main.h"
 /**
- * power - perform the operation
- * @b: pointer
- * @n: starting point
- * @m: counter
+ * binary_to_uint - converts a binary number to unsigned int
+ * @b: string
  *
- * Return: integer
- */
-unsigned int power(int n, int m, const char *b)
-{
-	if (*b == 0)
-		return (0);
-	return ((n * (*b - 48)) + power(n / 2, m, b + m));
-}
-/**
- *  binary_to_uint - converts binary to integer
- *  @b: pointer to the string
- *
- *  Return: unsigned int
+ * Return: number
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int m = 1, i = 1;
-
-	if (b == NULL)
+	int i;
+	unsigned int dec_val = 0;
+	
+	if (!b)
 		return (0);
-	if (b[0] != '1' && b[0] != '0')
-		return (0);
-	while (b[m])
-	{
-		i *= 2;
-		if (b[m] != '1' && b[m] != '0')
+	for (i = 0; b[i]; i++)
+	{	if (b[i] < '0' || b[i] > '1')
 			return (0);
-		m++;
+		dec_val = 2 * dec_val + (b[i] - '0');
 	}
-	return (power(i, 1, b));
+	return (dec_val);
 }
