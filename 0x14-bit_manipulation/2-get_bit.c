@@ -1,22 +1,23 @@
-#include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-
+#include"main.h"
+#include<stdio.h>
 /**
- * get_bit - a function ....
- * @n: the chaine of caractere
- * @index: the number
+ * get_bit - returns the value of a bit at a given index
+ * @n: number
+ * @index: index of desired bit
  *
- * Return: 1 or 0
+ * Return: 0 or 1
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int bit_val;
-
-	if (index > 63)
-		return (-1);
-
-	bit_val = (n >> index) & 1;
-
-	return (bit_val);
+	unsigned long int x = 1, count = 0;
+	while (x < n && count < 64)
+	{
+		x *= 2;
+		count++;
+	}
+	if (x != n && n != 0)
+		count--;
+	if (index > count)
+		return -1;
+	return ((n >> index) & 1);
 }
