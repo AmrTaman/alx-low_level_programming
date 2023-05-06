@@ -9,7 +9,7 @@ void print_binary(unsigned long int n)
 	unsigned long int x = 1;
 	int count = 0;
 
-	while (x <= n && count < 63)
+	while (x <= n && count < 64)
 	{
 		x *= 2;
 		count++;
