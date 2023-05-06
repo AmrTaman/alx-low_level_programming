@@ -1,7 +1,7 @@
 #include"main.h"
 #include<stdio.h>
 /**
- * prints_binary - prints the binary representation of a number
+ * print_binary - prints the binary representation of a number
  * @n: the number in decimal
  */
 void print_binary(unsigned long int n)
@@ -9,7 +9,7 @@ void print_binary(unsigned long int n)
 	unsigned long int x = 1;
 	int count = 0;
 
-	while (x < n)
+	while (x <= n && count < 63)
 	{
 		x *= 2;
 		count++;
