@@ -1,40 +1,20 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include<stdio.h>
 #include<stdarg.h>
-#include<stdio.h>
-
 /**
- * sum_them_all - a function ...
- * @n: the chaine
- * @...: the char
+ * sum_them_all - performs sum of numbers
+ * @n: number of numbers
  *
- * Return: 1 or 0
+ * Return: integer
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list ap;
-	unsigned int i, som = 0;
+	int sum = 0;
+	unsigned int x;
+	va_list num;
 
 	if (n == 0)
 		return (0);
-
-	va_start(ap, n);
-
-	for (i = 0; i < n; i++)
-		som = som + va_arg(ap, int);
-
-	va_end(ap);
-	return (som);
+	va_start(num, n);
+	for (x = 0; x < n; x++)
+		sum += va_arg(num, int);
+	return (sum);
 }
-
