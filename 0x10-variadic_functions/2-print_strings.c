@@ -1,50 +1,28 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include "variadic_functions.h"
-#include <stdio.h>
-#include <stdarg.h>
-
+#include<stdarg.h>
+#include<stdio.h>
 /**
- * print_strings - Prints strings, followed by a new line.
- * @separator: The string to be printed between strings.
- * @n: The number of strings passed to the function.
- * @...: A variable number of strings to be printed.
- *
- * Description: If separator is NULL, it is not printed.
- *              If one of the strings if NULL, (nil) is printed instead.
+ * print_string - prints strings
+ * @separator: separator between strings
+ * @n: number of arguments
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator,
+		const unsigned int n, ...)
 {
-	va_list strings;
-	char *str;
-	unsigned int index;
+	va_list st;
+	unsigned int x;
+	char *store;
 
-	va_start(strings, n);
-
-	for (index = 0; index < n; index++)
+	va_start(st, n);
+	for (x = 0; x < n; x++)
 	{
-		str = va_arg(strings, char *);
-
-		if (str == NULL)
-			printf("(nil)");
+		store = va_arg(st, char *);
+		if (store)
+			printf("%s", store);
 		else
-			printf("%s", str);
-
-		if (index != (n - 1) && separator != NULL)
+			printf("(nil)");
+		if (x != (n - 1) && separator)
 			printf("%s", separator);
 	}
-
 	printf("\n");
-
-	va_end(strings);
+	va_end(st);
 }
