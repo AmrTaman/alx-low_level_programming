@@ -1,18 +1,59 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include "variadic_functions.h"
+#include"variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include<stddef.h>
+/**
+ * struct func_data - struct for choosing
+ * @op: character
+ * @f: function pointer
+ */
+typedef struct func_data
+{
+	char op;
+	void (*f)(va_list);
+} func_data;
+/**
+ * c - character retreive
+ * @data: argument for data pointer
+ */
+void c(va_list data)
+{
+	 printf("%c", va_arg(data, int));
+}
+
+/**
+ * i - integer retreive
+ * @data: argument for data pointer
+ */
+
+void i(va_list data)
+{
+	printf("%d", va_arg(data, int));
+}
+/**
+ * f - float retreive
+ * @data: argument for data pointer
+ */
+
+void f(va_list data)
+{
+	printf("%f", va_arg(data, double));
+}
+
+/**
+ * s - string retreive
+ * @data: argument for data pointer
+ */
+void s(va_list data)
+{
+	char *word;
+
+	word = va_arg(data, char *);
+	if (word == NULL)
+		printf("(nil)");
+	else
+		printf("%s", word);
+}
 
 /**
  * print_all - prints anything
@@ -20,43 +61,36 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str, *sep = "";
+	int x = 0, m = 0, rep = 0;
+	va_list ptr;
 
-	va_list list;
-
-	va_start(list, format);
-
-	if (format)
+	func_data data[] =
 	{
-		while (format[i])
-		{
-			switch (format[i])
-			{
-				case 'c':
-					printf("%s%c", sep, va_arg(list, int));
-					break;
-				case 'i':
-					printf("%s%d", sep, va_arg(list, int));
-					break;
-				case 'f':
-					printf("%s%f", sep, va_arg(list, double));
-					break;
-				case 's':
-					str = va_arg(list, char *);
-					if (!str)
-						str = "(nil)";
-					printf("%s%s", sep, str);
-					break;
-				default:
-					i++;
-					continue;
-			}
-			sep = ", ";
-			i++;
-		}
-	}
+		{'c', c},
+		{'i', i},
+		{'f', f},
+		{'s', s}};
 
+	va_start(ptr, format);
+	while(format[x])
+	{
+		while ((data[m].op))
+		{
+			if ((data[m].op) == format[x] && rep == 0)
+				(*data[m].f)(ptr);
+			else if ((data[m].op) == format[x])
+			{
+				printf(", ");
+				(*data[m].f)(ptr);
+			}
+			m++;
+			rep++;
+		}
+		rep = 0;
+		m = 0;
+		x++;
+	}
 	printf("\n");
-	va_end(list);
 }
+
+
