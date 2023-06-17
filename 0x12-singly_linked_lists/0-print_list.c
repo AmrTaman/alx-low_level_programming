@@ -1,42 +1,22 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-print_list.c                               /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include <stdio.h>
-#include "lists.h"
-
+#include"lists.h"
+#include<stdio.h>
 /**
- * print_list - a function ...
- * @h: the list
+ * print_list - prints elements of a list
  *
- * Return: 1 or 0
+ * @h: head
+ * Return: integer
  */
-
 size_t print_list(const list_t *h)
 {
-	const list_t *ptr;
-	int cpt = 0;
+	size_t rep = 0;
 
-	if (h == NULL)
-		return (0);
-	ptr = h;
-	while (ptr != NULL)
+	for (; h; h = h->next)
 	{
-		if (ptr->str != NULL)
-			printf("[%d] %s\n", ptr->len, ptr->str);
-		else
+		if (h->str == NULL)
 			printf("[0] (nil)\n");
-		ptr = ptr->next;
-		cpt++;
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		rep++;
 	}
-	return (cpt);
+	return (rep);
 }
-
