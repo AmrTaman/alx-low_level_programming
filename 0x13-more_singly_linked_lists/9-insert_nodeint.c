@@ -19,7 +19,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	for (; x < idx - 1 && ptr; x++)
 		ptr = ptr->next;
-	if (x < idx)
+	if (x + 1 < idx)
 		return (NULL);
 	current = malloc(sizeof(listint_t));
 	if (current == NULL)
