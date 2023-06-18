@@ -1,15 +1,3 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 7-get_nodeint.c                              /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
 #include "lists.h"
 #include <stdio.h>
 /**
@@ -21,17 +9,11 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int num = 0;
-	listint_t *ptr = head;
+	unsigned int x = 0;
 
-	while (num != index && ptr != NULL)
-	{
-		num++;
-		ptr = ptr->next;
-	}
-
-	if (ptr == NULL)
+	if (head == NULL)
 		return (NULL);
-	else
-		return (ptr);
+	for (; x < index; x++)
+		head = head->next;
+	return (head);
 }
