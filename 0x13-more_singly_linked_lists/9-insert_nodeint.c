@@ -1,5 +1,6 @@
 #include "lists.h"
 #include<stdlib.h>
+#include<stdio.h>
 /**
  * insert_nodeint_at_index - inserts a new node in a linked list,
  * at a given position
@@ -18,20 +19,22 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	for (; x < idx - 1 && ptr; x++)
 		ptr = ptr->next;
-	if (x < idx - 1)
+	if (x < (idx - 1) * -1 && x + 1 != idx)
 		return (NULL);
 	current = malloc(sizeof(listint_t));
 	current->n = n;
 	if (idx == 0)
-	{
 		current->next = ptr;
-		*head = current;
+	else if(x + 1 == idx && ptr->next->next == NULL)
+	{
+		current->next = NULL;
+		ptr->next->next = current;
 	}
 	else
 	{
 		current->next = ptr->next;
 		ptr->next = current;
 	}
-	return (current);
+	return (*head);
 
 }
