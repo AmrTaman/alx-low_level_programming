@@ -76,7 +76,4 @@ char *_strpbrk(char *s, char *accept)
 {
 	        return (NULL);
 }
-char *_strstr(char *haystack, char *needle)
-{
-	        return (NULL);
-}
+char *_strstr(char *haystack, char *needle);
