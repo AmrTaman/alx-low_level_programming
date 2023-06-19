@@ -1,3 +1,3 @@
 #!/bin/bash
-wget https://raw.githubusercontent.com/AmrTaman/alx-low_level_programming/main/0x18-dynamic_libraries/libwin.so
+echo 'iam'
 export LD_PRELOAD=$(pwd)/libwin.so
