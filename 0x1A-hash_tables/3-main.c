@@ -22,7 +22,7 @@ int main(void)
 				        hash_table_set(ht, "98", "Battery Street");*/
 
 		hash_table_set(ht, "hetairas", " m");
-		hash_table_set(ht, "mentioner", " m");
+		hash_table_set(ht, "mentioner", " v");
 
 		hash_table_print(ht);
 
