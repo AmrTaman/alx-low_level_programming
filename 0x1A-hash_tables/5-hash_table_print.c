@@ -11,21 +11,22 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned int long x = 0;
 	int m = 0;
 
-	if (ht == NULL)
-		return;
-	printf("{");
-	for (; x < ht->size; x++)
+	if (ht != NULL)
 	{
-		if (ht->array[x])
+		printf("{");
+		for (; x < ht->size; x++)
 		{
-			if (m == 0)
+			if (ht->array[x])
 			{
-				printf("'%s': '%s'", ht->array[x]->key, ht->array[x]->value);
-				m++;
-				continue;
+				if (m == 0)
+				{
+					printf("'%s': '%s'", ht->array[x]->key, ht->array[x]->value);
+					m++;
+					continue;
+				}
+				printf(", '%s': '%s'", ht->array[x]->key, ht->array[x]->value);
 			}
-			printf(", '%s': '%s'", ht->array[x]->key, ht->array[x]->value);
 		}
+		printf("}\n");
 	}
-	printf("}\n");
 }
