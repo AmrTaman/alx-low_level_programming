@@ -29,8 +29,9 @@ hash_node_t *c_item(const char *key, const char *values)
  * @key: key
  * @value: value
  *
+ * Return: 0 or 1
  */
-void handle_collision(hash_node_t *current, const char *key, const char *value)
+int handle_collision(hash_node_t *current, const char *key, const char *value)
 {
 	hash_node_t *node;
 
@@ -46,8 +47,11 @@ void handle_collision(hash_node_t *current, const char *key, const char *value)
 	if (current->next == NULL)
 	{
 		node = c_item(key, value);
+		if (node == NULL)
+			return (0);
 		current->next = node;
 	}
+	return (1);
 }
 /**
  * hash_table_set - inserting an item
@@ -69,6 +73,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (current_node == NULL)
 	{
 		node = c_item(key, value);
+		if (node == NULL)
+			return (0);
 		ht->array[index] = node;
 		return (1);
 	}
@@ -77,6 +83,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		strcpy(current_node->value, value);
 		return (1);
 	}
-	handle_collision(current_node, key, value);
-	return (1);
+	if (handle_collision(current_node, key, value))
+		return (1);
+	return (0);
 }
