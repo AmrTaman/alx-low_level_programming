@@ -72,7 +72,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = node;
 		return (1);
 	}
-	else if (strcmp(current_node->key, key) == 0)
+	else if (strcmp(current_node->key, key) == 0 && ht->array[index])
 	{
 		strcpy(current_node->value, value);
 		return (1);
