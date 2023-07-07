@@ -35,7 +35,7 @@ int handle_collision(hash_node_t *current, const char *key, const char *value)
 {
 	hash_node_t *node;
 
-	while (current)
+	while (current->next)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
