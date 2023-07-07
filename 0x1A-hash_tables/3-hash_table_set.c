@@ -1,41 +1,90 @@
-#include "hash_tables.h"
+#include"hash_tables.h"
 #include<stdlib.h>
 #include<string.h>
-
+#include<stdio.h>
 /**
- * hash_table_set - adds an element to the hash table
- * @ht: hash table
- * @key: key
- * @value: value associated with the key
- * Return: 1 if its succeeded 0 otherwise
-**/
+ * c_item - creates a hash item
+ * @key: key of the iteem
+ * @values: value of the item
+ *
+ * Return: pointer of the item
+ */
+hash_node_t *c_item(const char *key, const char *values)
+{
+	char *k, *v;
+	hash_node_t *node = malloc(sizeof(hash_node_t));
 
+	k = malloc(strlen(key) + 1);
+	v = malloc(strlen(values) + 1);
+	strcpy(k, key);
+	strcpy(v, values);
+	node->key = k;
+	node->value = v;
+	node->next = NULL;
+	return (node);
+}
+/**
+ * handle_collision - collision detector
+ * @current: item pointer
+ * @key: key
+ * @value: value
+ *
+ * Return: 0 or 1
+ */
+int handle_collision(hash_node_t *current, const char *key, const char *value)
+{
+	hash_node_t *node;
+
+	while (current->next)
+	{
+		if (strcmp(current->key, key) == 0)
+		{
+			strcpy(current->value, value);
+			return (1);
+		}
+		current = current->next;
+	}
+	if (current->next == NULL)
+	{
+		node = c_item(key, value);
+		if (node == NULL)
+			return (0);
+		node->next = current;
+		current = node;
+	}
+	return (1);
+}
+/**
+ * hash_table_set - inserting an item
+ * @ht: pointer of the hash table
+ * @key: jey of the item
+ * @value: value of the item
+ *
+ * Return: 0 or 1
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long index, size;
-	hash_node_t *new_node;
+	unsigned long int index;
+	hash_node_t *current_node, *node;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL || key == NULL)
 		return (0);
-
-	size = ht->size;
-	index = key_index((const unsigned char *)key, size);
-
-	if (ht->array[index] != NULL && strcmp(ht->array[index]->key, key) == 0)
+	index = key_index((const unsigned char *)key, ht->size);
+	current_node = ht->array[index];
+	if (current_node == NULL)
 	{
-		ht->array[index]->value = strdup(value);
+		node = c_item(key, value);
+		if (node == NULL)
+			return (0);
+		ht->array[index] = node;
 		return (1);
 	}
-
-	new_node = malloc(sizeof(hash_node_t));
-
-	if (new_node == NULL)
-		return (0);
-
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-
-	return (1);
+	else if (strcmp(current_node->key, key) == 0)
+	{
+		strcpy(current_node->value, value);
+		return (1);
+	}
+	else if (handle_collision(current_node, key, value))
+		return (1);
+	return (0);
 }
