@@ -40,7 +40,7 @@ int handle_collision(hash_node_t *current, const char *key, const char *value)
 		if (strcmp(current->key, key) == 0)
 		{
 			strcpy(current->value, value);
-			break;
+			return (1);
 		}
 		current = current->next;
 	}
