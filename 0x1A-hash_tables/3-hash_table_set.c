@@ -81,7 +81,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else if (strcmp(current_node->key, key) == 0)
 	{
-		strcpy(current->value, value);
+		strcpy(current_node->value, value);
 		return (1);
 	}
 	else if (handle_collision(current_node, key, value))
