@@ -49,7 +49,8 @@ int handle_collision(hash_node_t *current, const char *key, const char *value)
 		node = c_item(key, value);
 		if (node == NULL)
 			return (0);
-		current->next = node;
+		node->next = current;
+		current = node;
 	}
 	return (1);
 }
