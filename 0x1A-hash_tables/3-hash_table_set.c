@@ -39,7 +39,7 @@ void handle_collision(hash_node_t *current, const char *key, const char *value)
 		if (strcmp(current->key, key) == 0)
 		{
 			strcpy(current->value, value);
-			return (1);
+			return;
 		}
 		current = current->next;
 	}
@@ -75,6 +75,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		strcpy(current_node->value, value);
 		return (1);
 	}
-	handle_collision(current_node, key, value)
+	handle_collision(current_node, key, value);
 	return (1);
 }
