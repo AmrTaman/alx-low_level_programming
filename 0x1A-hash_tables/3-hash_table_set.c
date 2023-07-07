@@ -39,13 +39,15 @@ void handle_collision(hash_node_t *current, const char *key, const char *value)
 		if (strcmp(current->key, key) == 0)
 		{
 			strcpy(current->value, value);
-			return;
+			break;
 		}
 		current = current->next;
 	}
-	node = c_item(key, value);
-	current->next = node;
-	return;
+	if (current->next == NULL)
+	{
+		node = c_item(key, value);
+		current->next = node;
+	}
 }
 /**
  * hash_table_set - inserting an item
