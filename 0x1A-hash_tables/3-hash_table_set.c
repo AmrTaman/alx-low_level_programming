@@ -83,7 +83,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		current_node->value = strdup(value);
 		return (1);
 	}
-	if (handle_collision(current_node, key, value))
+	else if (handle_collision(current_node, key, value))
 		return (1);
 	return (0);
 }
