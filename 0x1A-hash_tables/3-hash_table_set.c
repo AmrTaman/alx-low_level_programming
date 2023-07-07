@@ -50,6 +50,7 @@ int handle_collision(hash_node_t *current, const char *key, const char *value)
 		if (node == NULL)
 			return (0);
 		node->next = current;
+		current->next = NULL;
 		current = node;
 	}
 	return (1);
