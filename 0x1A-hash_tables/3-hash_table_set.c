@@ -35,24 +35,11 @@ int handle_collision(hash_node_t *current, const char *key, const char *value)
 {
 	hash_node_t *node;
 
-	while (current->next)
-	{
-		if (strcmp(current->key, key) == 0)
-		{
-			strcpy(current->value, value);
-			return (1);
-		}
-		current = current->next;
-	}
-	if (current->next == NULL)
-	{
-		node = c_item(key, value);
-		if (node == NULL)
-			return (0);
-		node->next = current;
-		current->next = NULL;
-		current = node;
-	}
+	node = c_item(key, value);
+	if (node == NULL)
+		return (0);
+	node->next = current;
+	current = node;
 	return (1);
 }
 /**
