@@ -5,7 +5,7 @@
  * @key: the key to search for
  *
  * Return: NULL or the value
- */ 
+ */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int hash;
@@ -17,7 +17,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	node = ht->array[hash];
 	if (hash >= ht->size)
 		return (NULL);
-	while(node)
+	while (node)
 	{
 		if (strcmp(node->key, key) == 0)
 			return (node->value);
