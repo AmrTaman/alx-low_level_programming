@@ -15,8 +15,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     if (ht == NULL || key == NULL || !(strcmp(key, "")) || value == NULL)
         return (0);
     hash = key_index((const unsigned char *)key, ht->size);
-        printf("%lu\n", hash);
-    fflush(stdout);
     if (ht->array[hash] == NULL)
     {
         if (hash >= ht->size)
@@ -27,6 +25,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         strcpy(node->key, key);
         strcpy(node->value, value);
         node->next = NULL;
+                printf("%lu\n", hash);
+    fflush(stdout);
         return (1);
     }
     else if (strcmp(ht->array[hash]->key, key) == 0)
