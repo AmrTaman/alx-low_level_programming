@@ -41,6 +41,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		node = malloc(sizeof(hash_node_t *));
 		if (node == NULL)
 			return (0);
+		node->key = malloc(sizeof(key) + 1);
+		node->value = malloc(sizeof(value) + 1);
 		strcpy(node->key, key);
 		strcpy(node->value, value);
 		node->next = head;
