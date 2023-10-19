@@ -20,12 +20,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         if (hash >= ht->size)
             return (0);
         node = malloc(sizeof(hash_node_t *));
-                        printf("%lu\n", hash);
-    fflush(stdout);
         if (node == NULL)
             return (0);
         strcpy(node->key, key);
         strcpy(node->value, value);
+                                printf("%lu\n", hash);
+    fflush(stdout);
         node->next = NULL;
         return (1);
     }
