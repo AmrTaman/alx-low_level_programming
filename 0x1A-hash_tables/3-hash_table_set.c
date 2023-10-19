@@ -14,7 +14,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
     if (ht == NULL || key == NULL || !(strcmp(key, "")) || value == NULL)
         return (0);
-    printf("sss");
+    printf("aaa\n");
+    fflush(stdout);
     hash = key_index((const unsigned char *)key, ht->size);
     if (ht->array[hash] == NULL)
     {
