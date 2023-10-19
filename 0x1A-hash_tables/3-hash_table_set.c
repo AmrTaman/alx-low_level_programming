@@ -1,3 +1,4 @@
+#include"hash_tables.h"
 /**
  * hash_table_set - inserts a node
  * @ht: hashtable pointer
