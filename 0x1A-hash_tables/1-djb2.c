@@ -39,7 +39,6 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 		node->snext = NULL;
 	}
 	else
-	{
 		while (nodes)
 		{
 			state = strcmp(node->key, nodes->key);
@@ -73,6 +72,5 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 			}
 			nodes = nodes->snext;
 		}
-	}
 	return (0);
 }
