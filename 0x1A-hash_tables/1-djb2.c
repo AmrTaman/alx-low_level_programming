@@ -46,7 +46,7 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 				printf("middle");
 				return (1);
 			}
-			else if (strcmp(node->key, nodes->key) == -1 && ((nodes->sprev == NULL &&
+			else if ((strcmp(node->key, nodes->key) == -1) && ((nodes->sprev == NULL &&
 				nodes->next == NULL) || (nodes->sprev == NULL && nodes->next != NULL)))
 			{
 				node->snext = nodes;
