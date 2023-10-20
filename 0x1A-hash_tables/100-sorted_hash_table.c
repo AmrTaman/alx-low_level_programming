@@ -114,3 +114,30 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+/**
+ * shash_table_delete - deletes the table
+ * @ht: table pointer
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	unsigned long int x;
+	shash_node_t *node, *temp;
+
+	if (ht == NULL)
+		return;
+	for (x = 0; x < ht->size; x++)
+	{
+		node = ht->array[x];
+		while (node != NULL)
+		{
+			temp = node->next;
+			free(node->key);
+			free(node->value);
+			free(node);
+			node = temp;
+		}
+	}
+	free(ht->array);
+	free(ht);
+}
