@@ -45,7 +45,8 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 			state = strcmp(node->key, nodes->key);
 			if (state == 0)
 				return (0);
-			else if (state == -1 && (nodes->snext != NULL && nodes->sprev != NULL || (nodes->snext == NULL && nodes->sprev != NULL)))
+			else if (state == -1 && (nodes->snext != NULL && nodes->sprev != NULL ||
+				(nodes->snext == NULL && nodes->sprev != NULL)))
 			{
 				node->snext = nodes;
 				node->sprev = nodes->sprev;
@@ -53,13 +54,14 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 				nodes->sprev = node;
 				return (1);
 			}
-			else if(state == -1 && ((nodes->sprev == NULL && nodes->next == NULL) || (nodes->sprev == NULL && nodes->next != NULL)))
+			else if (state == -1 && ((nodes->sprev == NULL && nodes->next == NULL) ||
+				(nodes->sprev == NULL && nodes->next != NULL)))
 			{
 				node->snext = nodes;
 				node->sprev = NULL;
 				nodes->sprev = node;
 				ht->shead = node;
-				return (1);                
+				return (1);
 			}
 			else if (state == 1 && nodes->snext == NULL)
 			{
