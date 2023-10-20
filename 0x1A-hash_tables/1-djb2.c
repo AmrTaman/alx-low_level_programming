@@ -27,15 +27,10 @@ unsigned long int hash_djb2(const unsigned char *str)
  */
 int sort_list(shash_table_t *ht, unsigned long int hash)
 {
-	unsigned long int x = 0;
 	shash_node_t *node = ht->array[hash], *nodes = ht->shead;
 
 	if (ht->shead == NULL)
-	{
 		ht->shead = node;
-		node->sprev = NULL;
-		node->snext = NULL;
-	}
 	else
 		while (nodes)
 		{
