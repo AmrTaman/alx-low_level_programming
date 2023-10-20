@@ -34,7 +34,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || value == NULL || (!strcmp(key, "")))
 		return (0);
-	hash = hash_djb2(key) % (ht->size);
+	hash = hash_djb2((const unsigned char *)key) % (ht->size);
 	if (ht->array[hash] == NULL)
 	{
 		node = malloc(sizeof(shash_node_t));
