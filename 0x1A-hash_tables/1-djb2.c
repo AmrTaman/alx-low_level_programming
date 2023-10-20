@@ -42,7 +42,6 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 				node->sprev = nodes->sprev;
 				nodes->sprev->snext = node;
 				nodes->sprev = node;
-				printf("middle");
 				return (1);
 			}
 			else if(strcmp(node->key, nodes->key) == -1 && ((nodes->sprev == NULL && nodes->next == NULL) || (nodes->sprev == NULL && nodes->next != NULL)))
@@ -51,7 +50,6 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 				node->sprev = NULL;
 				nodes->sprev = node;
 				ht->shead = node;
-				printf("first");
 				return (1);
 			}
 			else if (strcmp(node->key, nodes->key) == 1 && nodes->snext == NULL)
@@ -60,7 +58,6 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 				node->sprev = nodes;
 				nodes->snext = node;
 				ht->stail = node;
-				printf("last");
 				return (1);
 			}
 			nodes = nodes->snext;
