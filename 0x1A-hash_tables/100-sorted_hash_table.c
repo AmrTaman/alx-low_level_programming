@@ -61,8 +61,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		node->next = ht->array[hash];
 		node->sprev = NULL;
 		node->snext = NULL;
-		ht->array[hash] = node;    
+		ht->array[hash] = node;
 	}
-	sort_list(ht, hash); 
+	sort_list(ht, hash);
 	return (1);
 }
