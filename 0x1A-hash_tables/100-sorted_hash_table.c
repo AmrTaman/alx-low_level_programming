@@ -66,3 +66,51 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	sort_list(ht, hash);
 	return (1);
 }
+
+/**
+ * shash_table_print - prints a table
+ * @ht: table
+ */
+void shash_table_print(const shash_table_t *ht)
+{
+	int count = 0;
+	shash_node_t *node = ht->shead;
+
+	printf("{");
+	while (node)
+	{
+		if (count == 0)
+			printf("'%s': '%s'", node->key, node->value);
+		else
+		{
+			printf(", '%s': '%s'", node->key, node->value);
+		}
+		count++;
+		node = node->snext;
+	}
+	printf("}\n");
+}
+
+/**
+ * shash_table_print_rev - prints a table
+ * @ht: table
+ */
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	int count = 0;
+	shash_node_t *node = ht->stail;
+
+	printf("{");
+	while (node)
+	{
+		if (count == 0)
+			printf("'%s': '%s'", node->key, node->value);
+		else
+		{
+			printf(", '%s': '%s'", node->key, node->value);
+		}
+		count++;
+		node = node->sprev;
+	}
+	printf("}\n");
+}
