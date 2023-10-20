@@ -18,3 +18,51 @@ shash_table_t *shash_table_create(unsigned long int size)
 		ht->array[x] = NULL;
 	return (ht);
 }
+
+/**
+ * shash_table_set - sets the table
+ * @ht: table
+ * @key: key of the node
+ * @value: value of the node
+ *
+ * Return: 1 or 0
+ */
+int shash_table_set(shash_table_t *ht, const char *key, const char *value)
+{
+	shash_node_t *node;
+	unsigned long int hash;
+
+	if (ht == NULL || key == NULL || value == NULL || (!strcmp(key, "")))
+		return (0);
+	hash = hash_djb2(key) % (ht->size);
+	if (ht->array[hash] == NULL)
+	{
+		node = malloc(sizeof(shash_node_t));
+		node->key = malloc(sizeof(strlen(key) + 1));
+		node->value = malloc(sizeof(strlen(value) + 1));
+		strcpy(node->key, key);
+		strcpy(node->value, value);
+		node->next = NULL;
+		node->sprev = NULL;
+		node->snext = NULL;
+		ht->array[hash] = node;
+	}
+	else if (strcmp(ht->array[hash]->key, key) == 0)
+	{
+		strcpy(ht->array[hash]->value, value);
+	}
+	else
+	{
+		node = malloc(sizeof(shash_node_t));
+		node->key = malloc(sizeof(key) + 1);
+		node->value = malloc(sizeof(value) + 1);
+		strcpy(node->key, key);
+		strcpy(node->value, value);
+		node->next = ht->array[hash];
+		node->sprev = NULL;
+		node->snext = NULL;
+		ht->array[hash] = node;    
+	}
+	sort_list(ht, hash); 
+	return (1);
+}
