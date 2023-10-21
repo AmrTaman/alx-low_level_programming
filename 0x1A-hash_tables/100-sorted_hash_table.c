@@ -53,7 +53,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		create_node(ht, key, value);
+		node = create_node(ht, key, value);
 		node->next = node;
 	}
 	sort_list(ht, hash);
