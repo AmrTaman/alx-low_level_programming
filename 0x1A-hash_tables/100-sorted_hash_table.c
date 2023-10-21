@@ -54,7 +54,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		node = create_node(key, value);
-		node->next = node;
+		ht->array[hash]->next = node;
 	}
 	sort_list(ht, hash);
 	return (1);
