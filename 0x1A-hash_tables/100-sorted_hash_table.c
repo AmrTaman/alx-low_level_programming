@@ -44,7 +44,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	hash = hash_djb2((const unsigned char *)key) % (ht->size);
 	if (ht->array[hash] == NULL)
 	{
-		node = create_node(ht, key, value);
+		node = create_node(key, value);
 		ht->array[hash] = node;
 	}
 	else if (strcmp(ht->array[hash]->key, key) == 0)
@@ -53,7 +53,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		node = create_node(ht, key, value);
+		node = create_node(key, value);
 		node->next = node;
 	}
 	sort_list(ht, hash);
