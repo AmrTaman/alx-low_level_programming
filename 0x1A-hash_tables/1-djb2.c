@@ -74,13 +74,12 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 
 /**
  * create_node - creating a node
- * @ht: hashtable pointer
  * @key: key
  * @value: value
  *
  * Return: pointer
  */
-shash_node_t *create_node(shash_table_t *ht, const char *key, const char *value)
+shash_node_t *create_node(const char *key, const char *value)
 {
 	shash_node_t *node;
 
