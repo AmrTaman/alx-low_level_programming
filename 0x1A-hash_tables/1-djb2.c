@@ -107,7 +107,6 @@ shash_node_t *create_node(shash_table_t *ht, const char *key, const char *value)
 	node->next = NULL;
 	node->sprev = NULL;
 	node->snext = NULL;
-	ht->array[hash] = node;
 	return (node);
 }
 
