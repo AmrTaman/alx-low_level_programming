@@ -63,6 +63,7 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 				ht->stail = node;
 				return (1);
 			}
+			printf("%s", strcmp(node->key, nodes->key));
 			nodes = nodes->snext;
 		}
 	return (0);
