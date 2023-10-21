@@ -30,7 +30,10 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 	shash_node_t *node = ht->array[hash], *nodes = ht->shead;
 
 	if (ht->shead == NULL)
+	{
 		ht->shead = node;
+		ht->stail = node;
+	}
 	else
 		while (nodes)
 		{
