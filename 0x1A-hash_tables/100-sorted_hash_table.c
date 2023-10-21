@@ -78,7 +78,7 @@ void shash_table_print(const shash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-	node = ht->shead
+	node = ht->shead;
 	printf("{");
 	while (node)
 	{
@@ -105,7 +105,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-	node = ht->shead
+	node = ht->shead;
 	printf("{");
 	while (node)
 	{
