@@ -83,9 +83,7 @@ int sort_list(shash_table_t *ht, unsigned long int hash)
 shash_node_t *create_node(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *node;
-	unsigned long int hash;
 
-	hash = hash_djb2((const unsigned char *)key) % (ht->size);
 	node = malloc(sizeof(shash_node_t));
 	if (node == NULL)
 		return (NULL);
