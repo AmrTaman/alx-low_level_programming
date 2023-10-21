@@ -46,6 +46,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	{
 		node = create_node(key, value);
 		ht->array[hash] = node;
+		node->next = NULL;
 	}
 	else if (strcmp(ht->array[hash]->key, key) == 0)
 	{
@@ -54,7 +55,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		node = create_node(key, value);
-		ht->array[hash]->next = node;
+		node->next = ht->array[hash];
+		ht->array[hash] = node;
 	}
 	sort_list(ht, hash);
 	return (1);
