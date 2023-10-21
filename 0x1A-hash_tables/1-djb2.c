@@ -19,6 +19,46 @@ unsigned long int hash_djb2(const unsigned char *str)
 }
 
 /**
+ * create_node - creating a node
+ * @ht: hashtable pointer
+ * @key: key
+ * @value: value
+ *
+ * Return: pointer
+ */
+shash_node_t *create_node(shash_table_t *ht, const char *key, const char *value)
+{
+	shash_node_t *node;
+	unsigned long int hash;
+
+	hash = hash_djb2((const unsigned char *)key) % (ht->size);
+	node = malloc(sizeof(shash_node_t));
+	if (node == NULL)
+		return (NULL);
+	node->key = malloc(sizeof(strlen(key) + 1));
+	if (node->key == NULL)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->value = malloc(sizeof(strlen(value) + 1));
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (NULL);
+	}
+	strcpy(node->key, key);
+	strcpy(node->value, value);
+	node->next = NULL;
+	node->sprev = NULL;
+	node->snext = NULL;
+	ht->array[hash] = node;
+	return (node);
+}
+
+
+/**
  * sort_list - sorts a list
  * @ht: table pointer
  * @hash: hashing
