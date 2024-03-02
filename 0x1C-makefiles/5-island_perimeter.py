@@ -32,5 +32,5 @@ def island_perimeter(grid):
                 perimeter += 1
             if ((grid[x][y] == 1 and y == 0) or
                     (grid[x][y] == 1 and y == colm - 1)):
-                perimeter += 1  
+                perimeter += 1
     return (perimeter)
