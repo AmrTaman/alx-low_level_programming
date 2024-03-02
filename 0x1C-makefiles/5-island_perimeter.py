@@ -19,12 +19,12 @@ def island_perimeter(grid):
             if (grid[x][y] == 0 and x + 1 <= rows - 1 and
                     grid[x + 1][y] == 1):
                 perimeter += 1
-            elif (grid[x][y] == 0 and x - 1 >= 0 and grid[x - 1][y] == 1):
+            if (grid[x][y] == 0 and x - 1 >= 0 and grid[x - 1][y] == 1):
                 perimeter += 1
-            elif (grid[x][y] == 0 and y + 1 <= colm - 1 and
+            if (grid[x][y] == 0 and y + 1 <= colm - 1 and
                     grid[x][y + 1] == 1):
                 perimeter += 1
-            elif (grid[x][y] == 0 and y - 1 >= 0 and
+            if (grid[x][y] == 0 and y - 1 >= 0 and
                     grid[x][y - 1] == 1):
                 perimeter += 1
     return (perimeter)
